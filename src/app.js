@@ -11,11 +11,24 @@ export default class App extends Component {
         };
     }
 
-    onChange = (events) => {
+    onChange = (event) => {
         this.setState({ term: event.target.value });
     }
 
-    <input value={this.state.term} onChange={this.onChange} />
+   // <input value={this.state.term} onChange={this.onChange} />
+
+    onSubmit = (event) => {
+        event.preventDefault()
+        this.setState({
+          term: '',
+          items: [...this.state.items, this.state.term]
+        });
+      }
+    
+       <form className="App" onSubmit={this.onSubmit}>
+           <input value={this.state.term} onChange={this.onChange} />
+           <button>Submit</button>
+       </form>
     
     render() {
         return (
