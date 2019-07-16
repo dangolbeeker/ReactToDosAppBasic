@@ -15,6 +15,7 @@ export default class App extends Component {
         this.setState({ term: event.target.value });
     }
 
+    <input value={this.state.term} onChange={this.onChange} />
     
     render() {
         return (
